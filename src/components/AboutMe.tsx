@@ -96,6 +96,21 @@ const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
 					</p>
 				</ProfileInfo>
 			</Profile>
+			<div
+				style={{
+					backgroundColor: "#f5f5f5",
+					width: "80%",
+					// minHeight: "50vh",
+					borderRadius: "10px",
+					padding: "20px",
+					marginTop: "50px",
+					boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)",
+					fontFamily: "NotosansKR",
+					fontSize: "1.2rem",
+				}}
+			>
+				<p>First, solve the problem. Then, write the code.</p>
+			</div>
 		</SectionWrapper>
 	);
 });

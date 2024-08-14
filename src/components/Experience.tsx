@@ -23,7 +23,7 @@ const Experience = forwardRef<HTMLDivElement>((props, ref) => {
 
 	const CompanyName = styled.h2`
 		font-size: 1.5rem;
-		font-weight: 600;
+		font-weight: 700;
 	`;
 
 	const Period = styled.p`
@@ -61,12 +61,13 @@ const Experience = forwardRef<HTMLDivElement>((props, ref) => {
 		margin-top: 10px;
 		padding-top: 10px;
 		border-top: 1px solid #ddd;
+		max-width: 800px;
 	`;
 
 	const DevListItem = styled.li`
 		font-size: 1rem;
 		font-weight: 400;
-		padding-top: 4px;
+		padding-top: 7px;
 	`;
 
 	const media = useWindow();
@@ -77,8 +78,8 @@ const Experience = forwardRef<HTMLDivElement>((props, ref) => {
 			<div
 				style={{
 					// backgroundColor: "white",
-					maxWidth: "900px",
-					width: "60%",
+					maxWidth: "1200px",
+					width: "70%",
 					display: "flex",
 					// justifyContent: "center",
 					marginTop: "50px",
@@ -116,6 +117,16 @@ const Experience = forwardRef<HTMLDivElement>((props, ref) => {
 							사내에서 기존에 사용하던 VanilaJS폼에서 React + Typescript 개발
 							환경 구축 및 문서 작성
 						</DevListItem>
+						<DevListItem>Material-UI를 활용하여 UI 개발 및 디자인</DevListItem>
+						<DevListItem>Ant-Design을 활용하여 UI 개발 및 디자인</DevListItem>
+						<DevListItem>
+							상태관리를 위해 Zustand, Recoil, Redux를 사용해보며 최종적으로
+							Redux 적용
+						</DevListItem>
+						<DevListItem>
+							기존에 화면을 새로고침해야만 데이터를 불러오던 방식을 swr을
+							사용하여 데이터를 실시간으로 불러오도록 변경
+						</DevListItem>
 					</DevList>
 					<DevPart>백엔드 개발</DevPart>
 					<DevList>
@@ -134,8 +145,9 @@ const Experience = forwardRef<HTMLDivElement>((props, ref) => {
 							NestJS로 변경 및 개발 환경 구축
 						</DevListItem>
 						<DevListItem>
-							중구난방으로 되어있던 DynamoDB 테이블을 정리하고, 새로운 Single
-							Table을 설계하여 데이터를 이관
+							여러 가지의 테이블로 되어있으며 관리와 정의가 미흡한 DynamoDB
+							테이블을 정리하여 앱 단위로 pk, sk를 명확히 정의하여 Single Table
+							Design 적용 및 개선
 						</DevListItem>
 					</DevList>
 				</div>
