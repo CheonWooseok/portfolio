@@ -1,6 +1,12 @@
 // import "./App.css";
 
-import { useEffect, useRef, useState } from "react";
+import {
+	CalendarOutlined,
+	MailOutlined,
+	PhoneOutlined,
+	UserOutlined,
+} from "@ant-design/icons";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import typing from "./assets/typing.gif";
 
@@ -35,12 +41,6 @@ function App() {
 	const focusSecond = useRef<HTMLDivElement>(null);
 	const focusThird = useRef<HTMLDivElement>(null);
 
-	const scrollToRef = (ref: React.RefObject<HTMLDivElement>) => {
-		if (ref.current) {
-			ref.current.scrollIntoView({ behavior: "smooth" });
-		}
-	};
-
 	return (
 		<Wrapper>
 			<Header
@@ -51,7 +51,7 @@ function App() {
 
 			<div className="content">
 				<Banner />
-				<div className="content__item item1" ref={focusFirst}></div>
+				<AboutMe ref={focusFirst} />
 				<div className="content__item item2" ref={focusSecond}></div>
 				<div className="content__item item3" ref={focusThird}></div>
 			</div>
@@ -94,6 +94,7 @@ const Header = (buttonRef: contentRef) => {
 		width: 100%;
 		height: 70px;
 		z-index: 100;
+		border-bottom: ${isScroll ? "2px solid #eee" : "none"};
 	`;
 
 	const Title = styled.h1`
@@ -115,7 +116,13 @@ const Header = (buttonRef: contentRef) => {
 
 	const scrollToRef = (ref: React.RefObject<HTMLDivElement>) => {
 		if (ref.current) {
+			// y - 70
 			ref.current.scrollIntoView({ behavior: "smooth" });
+
+			window.scrollTo({
+				top: ref.current.offsetTop - 70,
+				behavior: "smooth",
+			});
 		}
 		console.log(ref.current);
 	};
@@ -187,4 +194,91 @@ const Banner = () => {
 	);
 };
 
+const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
+	const Wrapper = styled.div`
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 50px 0;
+	`;
+
+	const Title = styled.h1`
+		font-family: "BlackHanSans";
+		font-size: 3rem;
+		color: black;
+		border-bottom: 1px solid #333;
+	`;
+
+	const Profile = styled.div`
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 50px;
+		width: 80%;
+		height: 100%;
+		flex-wrap: wrap;
+	`;
+
+	const ProfileInfo = styled.div`
+		display: flex;
+		/* justify-content: center; */
+		align-items: center;
+		height: 100%;
+		font-size: 2rem;
+		font-family: "NotosansKR";
+		color: #333;
+		flex-basis: 300px;
+		padding: 20px;
+		p {
+			padding-left: 20px;
+		}
+	`;
+
+	const Label = styled.p`
+		font-size: 1.5rem;
+		font-weight: 600;
+	`;
+
+	const Text = styled.p`
+		font-size: 1.2rem;
+		font-weight: 400;
+	`;
+
+	return (
+		<Wrapper ref={ref}>
+			<Title>About Me</Title>
+			<Profile>
+				<ProfileInfo>
+					<UserOutlined />
+					<p>
+						<Label>이름</Label>
+						<Text>천우석</Text>
+					</p>
+				</ProfileInfo>
+				<ProfileInfo>
+					<CalendarOutlined />
+					<p>
+						<Label>생년월일</Label>
+						<Text>03.11.10</Text>
+					</p>
+				</ProfileInfo>
+				<ProfileInfo>
+					<PhoneOutlined />
+					<p>
+						<Label>전화번호</Label>
+						<Text>010-3448-8442</Text>
+					</p>
+				</ProfileInfo>
+				<ProfileInfo>
+					<MailOutlined />
+					<p>
+						<Label>이메일</Label>
+						<Text>rightsn1110@gmail.com</Text>
+					</p>
+				</ProfileInfo>
+			</Profile>
+		</Wrapper>
+	);
+});
 export default App;

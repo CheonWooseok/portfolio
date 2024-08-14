@@ -14,7 +14,7 @@ export const fonts = css`
 	@font-face {
 		font-family: "NotoSansKR";
 		src: url(${NotoSansKR});
-		font-weight: 400;
+		/* font-weight: 400; */
 		font-style: normal;
 	}
 
