@@ -8,6 +8,7 @@ import {
 import { forwardRef } from "react";
 import styled from "styled-components";
 import { SectionTitle, SectionWrapper } from "../App";
+import ProfileImg from "../assets/profile.png";
 
 const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
 	const Profile = styled.div`
@@ -45,9 +46,22 @@ const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
 		font-weight: 400;
 	`;
 
+	const newLocal = "50%";
 	return (
 		<SectionWrapper ref={ref}>
 			<SectionTitle>About Me</SectionTitle>
+			<div
+				style={{
+					width: "200px",
+					height: "200px",
+					borderRadius: newLocal,
+					backgroundImage: `url(${ProfileImg})`,
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+					backgroundRepeat: "no-repeat",
+					marginTop: "50px",
+				}}
+			/>
 			<Profile>
 				<ProfileInfo>
 					<UserOutlined />
@@ -96,21 +110,6 @@ const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
 					</p>
 				</ProfileInfo>
 			</Profile>
-			<div
-				style={{
-					backgroundColor: "#f5f5f5",
-					width: "80%",
-					// minHeight: "50vh",
-					borderRadius: "10px",
-					padding: "20px",
-					marginTop: "50px",
-					boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)",
-					fontFamily: "NotosansKR",
-					fontSize: "1.2rem",
-				}}
-			>
-				<p>First, solve the problem. Then, write the code.</p>
-			</div>
 		</SectionWrapper>
 	);
 });

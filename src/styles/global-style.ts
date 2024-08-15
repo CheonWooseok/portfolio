@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
-  ${fonts}
+  /* ${fonts} */
 `;
 
 export default GlobalStyle;

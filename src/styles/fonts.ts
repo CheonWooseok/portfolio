@@ -9,6 +9,7 @@ export const fonts = css`
 		src: url(${BlackHanSans});
 		font-weight: 400;
 		font-style: normal;
+		/* font-display: optional; */
 	}
 
 	@font-face {

@@ -11,6 +11,7 @@ const Banner = () => {
 		font-family: "BlackHanSans";
 		font-size: 4rem;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
@@ -42,6 +43,23 @@ const Banner = () => {
 					<br />
 					개발 포트폴리오
 				</p>
+
+				<div
+					style={{
+						backgroundColor: "#2F3645",
+						maxWidth: "80%",
+						// color: "black",
+						// minHeight: "50vh",
+						borderRadius: "10px",
+						padding: "20px",
+						marginTop: "50px",
+						boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)",
+						fontFamily: "NotosansKR",
+						fontSize: "1.2rem",
+					}}
+				>
+					<p>First, solve the problem. Then, write the code.</p>
+				</div>
 			</Typing>
 		</div>
 	);
