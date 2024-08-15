@@ -9,7 +9,7 @@ const Banner = () => {
 		height: 600px;
 		color: white;
 		font-family: "BlackHanSans";
-		font-size: 4rem;
+		font-size: 3.8rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -58,7 +58,13 @@ const Banner = () => {
 						fontSize: "1.2rem",
 					}}
 				>
-					<p>First, solve the problem. Then, write the code.</p>
+					<p
+						style={{
+							fontFamily: "NewAmsterdam",
+						}}
+					>
+						First, solve the problem. Then, write the code.
+					</p>
 				</div>
 			</Typing>
 		</div>
