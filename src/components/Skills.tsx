@@ -12,6 +12,8 @@ import ReactIcon from "../assets/icons/react.svg";
 import ReduxIcon from "../assets/icons/redux.svg";
 import SwrIcon from "../assets/icons/swr.png";
 // import TypescriptIcon from "../assets/icons/typscript.png";
+import NextIcon from "../assets/icons/nextjs.svg";
+import SpringIcon from "../assets/icons/spring.svg";
 
 const Skills = forwardRef<HTMLDivElement>((props, ref) => {
 	const SkillWrapper = styled.div`
@@ -19,6 +21,7 @@ const Skills = forwardRef<HTMLDivElement>((props, ref) => {
 		/* justify-content: center; */
 		align-items: center;
 		flex-wrap: wrap;
+		margin-bottom: 20px;
 	`;
 
 	const Skill = styled.img`
@@ -73,6 +76,11 @@ const Skills = forwardRef<HTMLDivElement>((props, ref) => {
 					<Skill src={LambdaIcon} alt="lambda" />
 					<Skill src={DynamoDBIcon} alt="dynamodb" />
 					<Skill src={MariaDBIcon} alt="mariadb" />
+				</SkillWrapper>
+				<SkillTitle>Preparation</SkillTitle>
+				<SkillWrapper>
+					<Skill src={NextIcon} alt="nextjs" />
+					<Skill src={SpringIcon} alt="spring" />
 				</SkillWrapper>
 			</div>
 		</SectionWrapper>

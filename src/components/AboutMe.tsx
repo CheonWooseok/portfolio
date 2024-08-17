@@ -23,13 +23,14 @@ const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
 
 	const ProfileInfo = styled.div`
 		display: flex;
-		/* justify-content: center; */
+		justify-content: center;
 		align-items: center;
+
 		height: 100%;
-		font-size: 2rem;
+		font-size: 2.2rem;
 		font-family: "NotosansKR";
 		color: #333;
-		flex-basis: 350px;
+		flex-basis: 340px;
 		padding: 20px;
 		p {
 			padding-left: 20px;
