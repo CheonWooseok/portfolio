@@ -6,6 +6,7 @@ import AboutMe from "./components/AboutMe";
 import Banner from "./components/Banner";
 import Experience from "./components/Experience";
 import Header from "./components/Header";
+import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 
 const Wrapper = styled.div`
@@ -68,6 +69,7 @@ function App() {
 				<AboutMe ref={focusFirst} />
 				<Experience ref={focusThird} />
 				<Skills ref={focusSecond} />
+				<Projects ref={focusThird} />
 			</div>
 		</Wrapper>
 	);
