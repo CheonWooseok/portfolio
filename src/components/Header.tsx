@@ -9,6 +9,58 @@ export interface contentRef {
 	focusThird: React.RefObject<HTMLDivElement>;
 }
 
+const HeaderWrapper = styled.header<{ scroll: boolean; media: string }>`
+	background-color: ${(props) =>
+		props.media === "mobile" || props.scroll ? "white" : "transparent"};
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 70px;
+	z-index: 100;
+	border-bottom: ${(props) => (props.scroll ? "1px solid #aaa" : "none")};
+`;
+
+const HeaderContainer = styled.div<{ media: string }>`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	width: 100%;
+	justify-content: ${(props) =>
+		props.media === "pc" ? "space-around" : "space-between"};
+`;
+
+const Title = styled.h1<{ scroll: boolean; media: string }>`
+	font-family: "BlackHanSans";
+	color: ${(props) =>
+		props.media === "mobile" || props.scroll ? "black" : "white"};
+`;
+
+const HeaderNav = styled.nav`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20;
+`;
+
+const NavButton = styled.button<{ media: string; isScroll: boolean }>`
+	color: ${(props) =>
+		props.media === "mobile" || props.isScroll ? "black" : "white"};
+	background-color: ${(props) =>
+		props.media === "mobile" || props.isScroll ? "white" : "transparent"};
+	font-size: 1.2rem;
+	font-family: "BlackHanSans";
+	font-weight: 700;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+`;
+
 const Header = (buttonRef: contentRef) => {
 	const media = useWindow();
 
@@ -31,41 +83,6 @@ const Header = (buttonRef: contentRef) => {
 		};
 	}, []);
 
-	const HeaderWrapper = styled.header<{ scroll: boolean }>`
-		background-color: ${(props) =>
-			media === "mobile" || props.scroll ? "white" : "transparent"};
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		text-align: center;
-		position: fixed;
-		top: 0;
-		width: 100%;
-		height: 70px;
-		z-index: 100;
-		border-bottom: ${(props) => (props.scroll ? "1px solid #aaa" : "none")};
-	`;
-
-	const Title = styled.h1<{ scroll: boolean }>`
-		font-family: "BlackHanSans";
-		color: ${(props) =>
-			media === "mobile" || props.scroll ? "black" : "white"};
-	`;
-
-	const Button = styled.button`
-		color: ${media === "mobile" || isScroll ? "black" : "white"};
-		background-color: ${media === "mobile" || isScroll
-			? "white"
-			: "transparent"};
-		font-size: 1.2rem;
-		font-family: "BlackHanSans";
-		font-weight: 700;
-		border: none;
-		padding: 5px 10px;
-		border-radius: 5px;
-		cursor: pointer;
-	`;
-
 	const scrollToRef = (ref: React.RefObject<HTMLDivElement>) => {
 		if (ref.current) {
 			// y - 70
@@ -80,40 +97,65 @@ const Header = (buttonRef: contentRef) => {
 	};
 
 	return (
-		<HeaderWrapper scroll={isScroll}>
-			<div
-				style={{
-					display: "flex",
-					justifyContent: media === "pc" ? "space-around" : "space-between",
-					width: media === "pc" ? "100%" : "90%",
-					alignItems: "center",
-				}}
+		<HeaderWrapper scroll={isScroll} media={media}>
+			<HeaderContainer
+				media={media}
+				style={
+					{
+						// display: "flex",
+						// justifyContent: media === "pc" ? "space-around" : "space-between",
+						// width: media === "pc" ? "100%" : "90%",
+						// alignItems: "center",
+					}
+				}
 			>
-				<Title scroll={isScroll}>Wooseok</Title>
+				<Title scroll={isScroll} media={media}>
+					Wooseok
+				</Title>
 				{media === "pc" ? (
-					<div>
-						<Button onClick={() => scrollToRef(buttonRef.focusFirst)}>
+					<HeaderNav>
+						<NavButton
+							media={media}
+							isScroll={isScroll}
+							onClick={() => scrollToRef(buttonRef.focusFirst)}
+						>
 							About Me
-						</Button>
-						<Button onClick={() => scrollToRef(buttonRef.focusThird)}>
+						</NavButton>
+						<NavButton
+							media={media}
+							isScroll={isScroll}
+							onClick={() => scrollToRef(buttonRef.focusThird)}
+						>
 							Experience
-						</Button>
-						<Button onClick={() => scrollToRef(buttonRef.focusSecond)}>
+						</NavButton>
+						<NavButton
+							media={media}
+							isScroll={isScroll}
+							onClick={() => scrollToRef(buttonRef.focusSecond)}
+						>
 							Skills
-						</Button>
-						<Button onClick={() => scrollToRef(buttonRef.focusThird)}>
+						</NavButton>
+						<NavButton
+							media={media}
+							isScroll={isScroll}
+							onClick={() => scrollToRef(buttonRef.focusThird)}
+						>
 							Projects
-						</Button>
-					</div>
+						</NavButton>
+					</HeaderNav>
 				) : (
 					<>
-						<Button onClick={() => setIsMobileMenu(!isMobileMenu)}>
+						<NavButton
+							media={media}
+							isScroll={isScroll}
+							onClick={() => setIsMobileMenu(!isMobileMenu)}
+						>
 							<MenuOutlined />
-						</Button>
+						</NavButton>
 						{isMobileMenu && MobileMenu(buttonRef, scrollToRef)}
 					</>
 				)}
-			</div>
+			</HeaderContainer>
 		</HeaderWrapper>
 	);
 };

@@ -10,43 +10,43 @@ import styled from "styled-components";
 import { SectionTitle, SectionWrapper } from "../App";
 import ProfileImg from "../assets/profile.png";
 
+const Profile = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+	width: 80%;
+	height: 100%;
+	flex-wrap: wrap;
+`;
+
+const ProfileInfo = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 100%;
+	font-size: 2.2rem;
+	font-family: "NotosansKR";
+	color: #333;
+	flex-basis: 340px;
+	padding: 20px;
+	p {
+		padding-left: 20px;
+	}
+`;
+
+const Label = styled.p`
+	font-size: 1.5rem;
+	font-weight: 600;
+`;
+
+const Text = styled.p`
+	font-size: 1.2rem;
+	font-weight: 400;
+`;
+
 const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
-	const Profile = styled.div`
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-top: 50px;
-		width: 80%;
-		height: 100%;
-		flex-wrap: wrap;
-	`;
-
-	const ProfileInfo = styled.div`
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		height: 100%;
-		font-size: 2.2rem;
-		font-family: "NotosansKR";
-		color: #333;
-		flex-basis: 340px;
-		padding: 20px;
-		p {
-			padding-left: 20px;
-		}
-	`;
-
-	const Label = styled.p`
-		font-size: 1.5rem;
-		font-weight: 600;
-	`;
-
-	const Text = styled.p`
-		font-size: 1.2rem;
-		font-weight: 400;
-	`;
-
 	const newLocal = "50%";
 	return (
 		<SectionWrapper ref={ref}>

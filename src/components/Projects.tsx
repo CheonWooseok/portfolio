@@ -4,94 +4,94 @@ import styled from "styled-components";
 import { SectionTitle, SectionWrapper } from "../App";
 import PortfolioImg from "../assets/screenshot/portfolio1.png";
 
+const ProjectWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 100%;
+`;
+
+const Project = styled.div`
+	background-color: white;
+	width: 80%;
+	min-height: 50vh;
+	border-radius: 10px;
+	padding: 20px;
+	margin-top: 50px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`;
+
+const ProjectMain = styled.div`
+	display: flex;
+	/* flex-direction: column; */
+	justify-content: center;
+	/* align-items: center; */
+	/* width: 80%; */
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+`;
+
+const ProjectImage = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	margin: 0px 30px;
+
+	img {
+		width: 100%;
+		height: 100%;
+		border: 0.5px solid #999;
+	}
+`;
+
+const ProjectTitle = styled.h2`
+	margin: 20px;
+	font-size: 2.5rem;
+	font-weight: 800;
+`;
+
+const ProjectDescription = styled.p`
+	font-size: 1.2rem;
+	font-weight: 500;
+	width: 100%;
+`;
+
+const ProjectInfo = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* margin-top: 50px; */
+	width: 50%;
+	height: 100%;
+	flex-wrap: wrap;
+`;
+
+const ProjectStack = styled.div`
+	display: flex;
+	/* justify-content: center; */
+	align-items: center;
+	margin-top: 20px;
+	width: 100%;
+	height: 100%;
+	flex-wrap: wrap;
+`;
+const ProjectStackTitle = styled.h3`
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-right: 10px;
+	font-family: "BlackHanSans";
+`;
+
 const Projects = forwardRef<HTMLDivElement>((props, ref) => {
-	const ProjectWrapper = styled.div`
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap;
-		width: 100%;
-	`;
-
-	const Project = styled.div`
-		background-color: white;
-		width: 80%;
-		min-height: 50vh;
-		border-radius: 10px;
-		padding: 20px;
-		margin-top: 50px;
-		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	`;
-
-	const ProjectMain = styled.div`
-		display: flex;
-		/* flex-direction: column; */
-		justify-content: center;
-		/* align-items: center; */
-		/* width: 80%; */
-		padding: 20px;
-		width: 100%;
-		height: 100%;
-	`;
-
-	const ProjectImage = styled.div`
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 50%;
-		margin: 0px 30px;
-
-		img {
-			width: 100%;
-			height: 100%;
-			border: 0.5px solid #999;
-		}
-	`;
-
-	const ProjectTitle = styled.h2`
-		margin: 20px;
-		font-size: 2.5rem;
-		font-weight: 800;
-	`;
-
-	const ProjectDescription = styled.p`
-		font-size: 1.2rem;
-		font-weight: 500;
-		width: 100%;
-	`;
-
-	const ProjectInfo = styled.div`
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		/* margin-top: 50px; */
-		width: 50%;
-		height: 100%;
-		flex-wrap: wrap;
-	`;
-
-	const ProjectStack = styled.div`
-		display: flex;
-		/* justify-content: center; */
-		align-items: center;
-		margin-top: 20px;
-		width: 100%;
-		height: 100%;
-		flex-wrap: wrap;
-	`;
-	const ProjectStackTitle = styled.h3`
-		font-size: 1.5rem;
-		font-weight: 700;
-		margin-right: 10px;
-		font-family: "BlackHanSans";
-	`;
-
 	return (
 		<SectionWrapper ref={ref} background="#36BA98">
 			<SectionTitle>Projects</SectionTitle>

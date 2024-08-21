@@ -15,35 +15,35 @@ import SwrIcon from "../assets/icons/swr.png";
 import NextIcon from "../assets/icons/nextjs.svg";
 import SpringIcon from "../assets/icons/spring.svg";
 
+const SkillWrapper = styled.div`
+	display: flex;
+	/* justify-content: center; */
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+`;
+
+const Skill = styled.img`
+	width: 80px;
+	height: 80px;
+	margin: 10px;
+`;
+
+const SkillTitle = styled.h2`
+	font-size: 1.7rem;
+	font-weight: 700;
+
+	&:before {
+		content: "";
+		background-color: #f4ce14;
+		height: 0.8em;
+		width: 3px;
+		display: inline-block;
+		margin-right: 10px;
+	}
+`;
+
 const Skills = forwardRef<HTMLDivElement>((props, ref) => {
-	const SkillWrapper = styled.div`
-		display: flex;
-		/* justify-content: center; */
-		align-items: center;
-		flex-wrap: wrap;
-		margin-bottom: 20px;
-	`;
-
-	const Skill = styled.img`
-		width: 80px;
-		height: 80px;
-		margin: 10px;
-	`;
-
-	const SkillTitle = styled.h2`
-		font-size: 1.7rem;
-		font-weight: 700;
-
-		&:before {
-			content: "";
-			background-color: #f4ce14;
-			height: 0.8em;
-			width: 3px;
-			display: inline-block;
-			margin-right: 10px;
-		}
-	`;
-
 	return (
 		<SectionWrapper ref={ref} background="#007acc">
 			<SectionTitle>Skills</SectionTitle>

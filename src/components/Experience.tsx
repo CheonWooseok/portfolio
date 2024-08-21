@@ -4,72 +4,72 @@ import { SectionTitle, SectionWrapper } from "../App";
 import WoorisoftImg from "../assets/icons/woorisoft.png";
 import useWindow from "../hooks/useWindow";
 
+const WoorisoftIcon = styled.div`
+	max-width: 200px;
+	max-height: 200px;
+
+	min-width: 200px;
+	min-height: 200px;
+
+	background-image: url(${WoorisoftImg});
+	background-size: 80%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: white;
+	border-radius: 50%;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+`;
+
+const CompanyName = styled.h2`
+	font-size: 1.5rem;
+	font-weight: 700;
+`;
+
+const Period = styled.p`
+	font-size: 1.1rem;
+	font-weight: 400;
+	padding-top: 4px;
+	color: #999;
+`;
+
+const Position = styled.p`
+	font-size: 1.2rem;
+	font-weight: 500;
+	padding-top: 4px;
+`;
+
+const DevPart = styled.h2`
+	font-size: 1.2rem;
+	font-weight: 500;
+	padding-top: 4px;
+	margin-top: 20px;
+
+	&:before {
+		content: "";
+		background-color: #007acc;
+		height: 0.8em;
+		width: 3px;
+		display: inline-block;
+		margin-right: 10px;
+	}
+`;
+
+const DevList = styled.ul`
+	list-style-type: circle;
+	padding-left: 20px;
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid #ddd;
+	max-width: 800px;
+`;
+
+const DevListItem = styled.li`
+	font-size: 1rem;
+	font-weight: 400;
+	padding-top: 7px;
+`;
+
 const Experience = forwardRef<HTMLDivElement>((props, ref) => {
-	const WoorisoftIcon = styled.div`
-		max-width: 200px;
-		max-height: 200px;
-
-		min-width: 200px;
-		min-height: 200px;
-
-		background-image: url(${WoorisoftImg});
-		background-size: 80%;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-color: white;
-		border-radius: 50%;
-		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-	`;
-
-	const CompanyName = styled.h2`
-		font-size: 1.5rem;
-		font-weight: 700;
-	`;
-
-	const Period = styled.p`
-		font-size: 1.1rem;
-		font-weight: 400;
-		padding-top: 4px;
-		color: #999;
-	`;
-
-	const Position = styled.p`
-		font-size: 1.2rem;
-		font-weight: 500;
-		padding-top: 4px;
-	`;
-
-	const DevPart = styled.h2`
-		font-size: 1.2rem;
-		font-weight: 500;
-		padding-top: 4px;
-		margin-top: 20px;
-
-		&:before {
-			content: "";
-			background-color: #007acc;
-			height: 0.8em;
-			width: 3px;
-			display: inline-block;
-			margin-right: 10px;
-		}
-	`;
-
-	const DevList = styled.ul`
-		list-style-type: circle;
-		padding-left: 20px;
-		margin-top: 10px;
-		padding-top: 10px;
-		border-top: 1px solid #ddd;
-		max-width: 800px;
-	`;
-
-	const DevListItem = styled.li`
-		font-size: 1rem;
-		font-weight: 400;
-		padding-top: 7px;
-	`;
-
 	const media = useWindow();
 
 	return (
